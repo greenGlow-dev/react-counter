@@ -16,9 +16,9 @@ class Mega extends React.Component {
 
     render() {
         return (
-            <div className='container'>
+            <div className='container mt-5'>
                 <div className='card'>
-                    <div className='card-header'>Count up</div>
+                    <div className='card-header'>Counter</div>
                     <div className='card-body'>{this.state.count}</div>
                     <div className='card-footer'>
                         <button className='btn btn-success' onClick={this.upcounter}>+</button>
