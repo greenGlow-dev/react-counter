@@ -1,17 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDom from "react-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+class Mega extends React.Component {
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    state= {
+        count :0
+    }
+
+    upcounter = () =>{
+      this.setState({count:this.state.count+1})
+    }
+    downcounter = () =>{
+        this.setState({count:this.state.count-1})
+       }
+
+    render() {
+        return (
+            <div className='container'>
+                <div className='card'>
+                    <div className='card-header'>Count up</div>
+                    <div className='card-body'>{this.state.count}</div>
+                    <div className='card-footer'>
+                        <button className='btn btn-success' onClick={this.upcounter}>+</button>
+                        <button className='btn btn-danger ml-2' onClick={this.downcounter}>-</button>
+                    </div>
+                </div>
+
+            </div>
+        )
+    }
+}
+
+ReactDom.render(<Mega />, document.getElementById('root'))
+
+
+
+
